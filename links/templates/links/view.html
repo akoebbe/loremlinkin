@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>{{ link.title }} - LoremLink.in</title>
+</head>
+<body>
+    <section>
+        <header><h1>{{ link.title }}</h1></header>
+        {% if link.description %}
+          <p>{{ link.description }}</p>
+        {% endif %}
+    </section>
+</body>
+</html>
