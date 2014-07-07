@@ -1,0 +1,39 @@
+@import "compass/css3/border-radius"
+@import "compass/css3/box-shadow"
+@import "compass/css3/box-sizing"
+@import "compass/utilities/general/clearfix"
+@import "sassy-buttons"
+
+body.link
+  background: $body-bg image-url('paper_fibers.png') center center
+  display: table
+  main
+    display: table-cell
+    vertical-align: middle
+  section
+    text-align: center
+    margin: auto
+    padding: 1rem
+    width: 40%
+    min-width: 300px
+    max-width: 600px
+    border: rgba(black, 0.5) 3px solid
+    background-color: rgba(white, .5)
+    +box-shadow(rgba(black, 0.5) 0px 0px 1rem)
+    +box-sizing('border-box')
+    +clearfix
+  button
+    float: right
+    @include sassy-button("shiny", .5rem, .8rem, complement(darken($body-bg, 40%)))
+  > header, > footer
+    position: absolute
+    left: 0
+    width: 100%
+    background: rgba(black, 0.5)
+    color: #ffffff
+    padding: .5rem
+    +box-sizing('border-box')
+  > header
+    top: 0
+  > footer
+    bottom: 0
