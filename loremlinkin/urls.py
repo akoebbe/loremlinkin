@@ -5,15 +5,14 @@ from django.contrib import admin
 from rest_framework import routers
 from links import views
 
-router = routers.DefaultRouter()
-router.register(r'links', views.LinkViewSet)
+router = routers.SimpleRouter()
+router.register(r'links', views.LinkViewSet, base_name='link')
 
 urlpatterns = patterns('',
-    # Examples:
     url(r'^$', 'links.views.index', name='home'),
-    url(r'^(?P<link_hash>[A-Fa-f0-9]{10})$', 'links.views.view', name='view'),
-    # url(r'^blog/', include('blog.urls')),
+    url(r'^(?P<link_hash>[A-Za-z0-9]+)$', 'links.views.view', name='link-detail'),
     url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework')),
+    url(r'^api/', include(router.urls, namespace="api")),
+
     url(r'^admin/', include(admin.site.urls)),
-    url(r'^', include(router.urls)),
 )

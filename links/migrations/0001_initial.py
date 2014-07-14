@@ -26,7 +26,7 @@ class Migration(migrations.Migration):
             name='Link',
             fields=[
                 ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
-                ('hash', models.CharField(default=links.models._create_hash, unique=True, max_length=10)),
+                ('hash', models.CharField(unique=True, max_length=10)),
                 ('title', models.CharField(max_length=255)),
                 ('description', models.TextField()),
                 ('logo', models.URLField(null=True)),

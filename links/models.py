@@ -1,29 +1,30 @@
 from __future__ import absolute_import
 from django.db import models
-import hashlib
-import time
-import base64
-import datetime
-
-
-def _create_hash():
-    """This function generate 10 character long base64 hash"""
-    linkhash = hashlib.sha1()
-    linkhash.update(str(time.time()))
-    return base64.b64encode(linkhash.digest()[-7:]).replace('=', '').replace('/', '_')
+from django_extensions.db import fields as djefields
+from django.templatetags.static import static
 
 
 class Link(models.Model):
-    hash = models.CharField(max_length=10, default=_create_hash, unique=True, editable=False)
+    hash = djefields.ShortUUIDField(max_length=10)
     title = models.CharField(max_length=255, null=False)
     description = models.TextField(blank=True)
     logo = models.URLField(blank=True, null=True)
-    texture = models.ForeignKey('Texture', null=True, blank=True)
+    texture = models.ForeignKey('Texture', related_name="links", null=True, blank=True)
     color = models.CharField(max_length=6, null=True, blank=True)
     create_date = models.DateTimeField(auto_now_add=True, editable=False)
 
     def __str__(self):
         return "%s (%s)" % (self.title, self.hash)
+
+    @models.permalink
+    def get_absolute_url(self):
+        return ('link-detail', [self.hash,])
+
+    def get_texture_url(self):
+        if self.texture:
+            return static(self.texture.image.url)
+        else:
+            return False
 
 
 class Texture(models.Model):

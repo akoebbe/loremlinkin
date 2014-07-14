@@ -22,7 +22,7 @@ class Migration(migrations.Migration):
         migrations.AlterField(
             model_name='link',
             name='hash',
-            field=models.CharField(default=links.models._create_hash, unique=True, max_length=10, editable=False),
+            field=models.CharField(unique=True, max_length=10, editable=False),
         ),
         migrations.AlterField(
             model_name='link',
