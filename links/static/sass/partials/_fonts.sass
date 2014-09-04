@@ -1,0 +1,14 @@
+@import "compass/css3"
+
+// Format: Font-family Font-filename style weight
+$fonts: lincoln AlincolnFont normal bold,
+
+@each $font in $fonts
+  $font-name: nth($font, 1)
+  $font-file: nth($font, 2)
+  $font-style: nth($font, 3)
+  $font-weight: nth($font, 4)
+
+  @include font-face($font-name, font-files( $font-file+".woff", $font-file+".svg", $font-file+".eot"), $font-file+".eot", $font-weight, $font-style)
+
+

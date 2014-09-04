@@ -24,16 +24,17 @@ body.link
     +clearfix
   button
     float: right
-    @include sassy-button("shiny", .5rem, .8rem, complement(darken($body-bg, 40%)))
-  > header, > footer
+    @include sassy-button("shiny", .5rem, .8rem, #666)
+    &:before
+      content: '\00AB'
+      padding-right: .25em
+  > header
     position: absolute
     left: 0
     width: 100%
-    background: rgba(black, 0.5)
-    color: #ffffff
     padding: .5rem
     +box-sizing('border-box')
-  > header
     top: 0
-  > footer
-    bottom: 0
+    img
+      max-width: 400px
+      max-height: 75px

@@ -17,16 +17,17 @@
     <script>
       WebFont.load({
         google: {
-          families: ['Roboto']
+          families: ['Roboto', 'Milonga']
         }
       });
     </script>
 </head>
 <body class="link" ng-controller="LLCtrl">
-{% verbatim %}
+    {% if link.logo %}
     <header>
-        Here's the header
+       <img src="{{link.logo}}">
     </header>
+    {% endif %}
     <main>
         <section>
             <header><h1 ng-model="link.title" editable-text="link.title">{{ link.title }}</h1></header>
@@ -36,8 +37,9 @@
     </main>
 
     <footer>
-        Here's some stuff
+        {% block footer %}
+            Powered by <a class="logo">Lorem Linkin</a>
+        {% endblock %}
     </footer>
-{% endverbatim %}
 </body>
 </html>

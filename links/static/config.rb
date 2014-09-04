@@ -11,6 +11,7 @@ css_dir = "css/links"
 sass_dir = "sass"
 images_dir = "images/links"
 javascripts_dir = "js/links"
+fonts_dir = "fonts/links"
 
 
 # You can select your preferred output style here (can be overridden via the command line):

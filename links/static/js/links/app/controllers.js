@@ -2,7 +2,7 @@
 
 /* Controllers */
 
-var LoremLinkinControllers = angular.module('LoremLinkinControllers', []);
+var LoremLinkinControllers = angular.module 'LoremLinkinControllers', [];
 
 LoremLinkinControllers.controller('LLCtrl', ['$scope', '$log', 'Link',
 
