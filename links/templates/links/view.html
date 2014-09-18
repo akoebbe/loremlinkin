@@ -2,6 +2,7 @@
 <html ng-app="LoremLinkinApp">
 <head lang="en">
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no">
     <title>{{ link.title }} - LoremLink.in</title>
     <link rel="stylesheet" href="{% static "css/links/styles.css" %}" />
     <link rel="stylesheet" href="{% static "css/links/xeditable.css" %}"  />
@@ -21,6 +22,16 @@
         }
       });
     </script>
+    <style>
+        body.link {
+            {% if link.color %}
+                background-color: {{link.color}};
+            {% endif %}
+            {% if link.texture %}
+                background-image: url({{link.texture.image.url}});
+            {% endif %}
+        }
+    </style>
 </head>
 <body class="link" ng-controller="LLCtrl">
     {% if link.logo %}
@@ -30,9 +41,12 @@
     {% endif %}
     <main>
         <section>
-            <header><h1 ng-model="link.title" editable-text="link.title">{{ link.title }}</h1></header>
-            <p ng-model="link.description" editable-textarea="link.description">{{ link.description }}</p>
-            <button onclick="history.back()">Go Back</button>
+            {% load typogrify_tags %}
+            <header><h1 ng-model="link.title" editable-text="link.title">{{ link.title|typogrify }}</h1></header>
+            <p ng-model="link.description" editable-textarea="link.description">{{ link.description|typogrify }}</p>
+            <div class="button-set">
+                <button onclick="history.back()">Go Back</button>
+            </div>
         </section>
     </main>
 

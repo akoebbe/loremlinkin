@@ -2,6 +2,7 @@ from __future__ import absolute_import
 from django.db import models
 from django_extensions.db import fields as djefields
 from django.templatetags.static import static
+from django.forms import ModelForm
 
 
 class Link(models.Model):
@@ -18,13 +19,19 @@ class Link(models.Model):
 
     @models.permalink
     def get_absolute_url(self):
-        return ('link-detail', [self.hash,])
+        return 'link-detail', [self.hash]
 
     def get_texture_url(self):
         if self.texture:
             return static(self.texture.image.url)
         else:
             return False
+
+
+class LinkForm(ModelForm):
+    class Meta:
+        model = Link
+        fields = ['title', 'description', 'logo', 'color']
 
 
 class Texture(models.Model):

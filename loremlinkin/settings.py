@@ -39,6 +39,7 @@ INSTALLED_APPS = (
     'links',
     'rest_framework',
     'django_extensions',
+    'typogrify',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -86,7 +87,7 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 MEDIA_URL = '/media/'
-MEDIA_PATH = '../media/'
+MEDIA_ROOT = '/Users/akoebbe/Personal/LoremLinkin/loremlinkin/media/'
 
 
 REST_FRAMEWORK = {

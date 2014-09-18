@@ -13,18 +13,23 @@ body.link
   section
     text-align: center
     margin: auto
-    padding: 1rem
+    padding: 1.5rem
     width: 40%
     min-width: 300px
     max-width: 600px
-    border: rgba(black, 0.5) 3px solid
+    border: rgba(black, 0.1) 3px solid
+    +border-radius(2px)
     background-color: rgba(white, .5)
-    +box-shadow(rgba(black, 0.5) 0px 0px 1rem)
+    +box-shadow(rgba(black, 0.8) 0px 0px 10px)
     +box-sizing('border-box')
     +clearfix
+  h1
+    margin: 0 0 1rem
+  .button-set
+    margin-top: 1.5rem
+    text-align: right
   button
-    float: right
-    @include sassy-button("shiny", .5rem, .8rem, #666)
+    @include sassy-button("shiny", 2px, .8rem, #666)
     &:before
       content: '\00AB'
       padding-right: .25em
