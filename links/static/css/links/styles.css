@@ -93,20 +93,22 @@ body { font-size: 16px; }
 
 .logo { font-family: "Milonga"; font-style: normal; font-weight: normal; text-shadow: rgba(0, 0, 0, 0.8) 2px 2px 5px; }
 
-body.link { background: #ddccaa url('../../images/links/paper_fibers.png?1403232046') center center; display: table; }
-body.link main { display: table-cell; vertical-align: middle; }
-body.link section { text-align: center; margin: auto; padding: 1.5rem; width: 40%; min-width: 300px; max-width: 600px; border: rgba(0, 0, 0, 0.1) 3px solid; -moz-border-radius: 2px; -webkit-border-radius: 2px; border-radius: 2px; background-color: rgba(255, 255, 255, 0.5); -moz-box-shadow: rgba(0, 0, 0, 0.8) 0px 0px 10px; -webkit-box-shadow: rgba(0, 0, 0, 0.8) 0px 0px 10px; box-shadow: rgba(0, 0, 0, 0.8) 0px 0px 10px; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; overflow: hidden; *zoom: 1; }
-body.link h1 { margin: 0 0 1rem; }
-body.link .button-set { margin-top: 1.5rem; text-align: right; }
-body.link button { font-size: 0.8rem; padding: 0.5em 1.5em; display: inline-block; cursor: pointer; -moz-border-radius: 2px; -webkit-border-radius: 2px; border-radius: 2px; *zoom: 1; filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FF666666', endColorstr='#FF333333'); background: -moz-linear-gradient(#a6a6a6, #666666 50%, #4d4d4d); background: -webkit-linear-gradient(#a6a6a6, #666666 50%, #4d4d4d); background: linear-gradient(#a6a6a6, #666666 50%, #4d4d4d); -moz-box-shadow: #cccccc 0 1px 0 inset; -webkit-box-shadow: #cccccc 0 1px 0 inset; box-shadow: #cccccc 0 1px 0 inset; border: 1px solid #404040; color: white; text-shadow: #505050 0 -1px 0; }
-body.link button:hover { text-decoration: none; }
-body.link button:hover { background-color: #4d4d4d; background: -moz-linear-gradient(#a1a1a1, #4d4d4d 50%, #383838); background: -webkit-linear-gradient(#a1a1a1, #4d4d4d 50%, #383838); background: linear-gradient(#a1a1a1, #4d4d4d 50%, #383838); }
-body.link button:active { -moz-box-shadow: #383838 0 1px 2px inset; -webkit-box-shadow: #383838 0 1px 2px inset; box-shadow: #383838 0 1px 2px inset; }
-body.link button.disabled, body.link button[disabled] { filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=60); opacity: 0.6; background: #4d4d4d; cursor: default; -moz-box-shadow: none; -webkit-box-shadow: none; box-shadow: none; }
-body.link button::-moz-focus-inner { padding: 0 !important; margin: -1px !important; }
-body.link button:before { content: "\00AB"; padding-right: 0.25em; }
-body.link > header { position: absolute; left: 0; width: 100%; padding: 0.5rem; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; top: 0; }
-body.link > header img { max-width: 400px; max-height: 75px; }
+body.home { background: #bbbbbb; }
+
+body { background: #ddccaa url('../../images/links/paper_fibers.png?1403232046') center center; display: table; }
+body main { display: table-cell; vertical-align: middle; }
+body section { text-align: center; margin: auto; padding: 1.5rem; width: 40%; min-width: 300px; max-width: 600px; border: rgba(0, 0, 0, 0.1) 3px solid; -moz-border-radius: 2px; -webkit-border-radius: 2px; border-radius: 2px; background-color: rgba(255, 255, 255, 0.5); -moz-box-shadow: rgba(0, 0, 0, 0.8) 0px 0px 10px; -webkit-box-shadow: rgba(0, 0, 0, 0.8) 0px 0px 10px; box-shadow: rgba(0, 0, 0, 0.8) 0px 0px 10px; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; overflow: hidden; *zoom: 1; }
+body h1 { margin: 0 0 1rem; }
+body .button-set { margin-top: 1.5rem; text-align: right; }
+body button { font-size: 0.8rem; padding: 0.5em 1.5em; display: inline-block; cursor: pointer; -moz-border-radius: 2px; -webkit-border-radius: 2px; border-radius: 2px; *zoom: 1; filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FF666666', endColorstr='#FF333333'); background: -moz-linear-gradient(#a6a6a6, #666666 50%, #4d4d4d); background: -webkit-linear-gradient(#a6a6a6, #666666 50%, #4d4d4d); background: linear-gradient(#a6a6a6, #666666 50%, #4d4d4d); -moz-box-shadow: #cccccc 0 1px 0 inset; -webkit-box-shadow: #cccccc 0 1px 0 inset; box-shadow: #cccccc 0 1px 0 inset; border: 1px solid #404040; color: white; text-shadow: #505050 0 -1px 0; }
+body button:hover { text-decoration: none; }
+body button:hover { background-color: #4d4d4d; background: -moz-linear-gradient(#a1a1a1, #4d4d4d 50%, #383838); background: -webkit-linear-gradient(#a1a1a1, #4d4d4d 50%, #383838); background: linear-gradient(#a1a1a1, #4d4d4d 50%, #383838); }
+body button:active { -moz-box-shadow: #383838 0 1px 2px inset; -webkit-box-shadow: #383838 0 1px 2px inset; box-shadow: #383838 0 1px 2px inset; }
+body button.disabled, body button[disabled] { filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=60); opacity: 0.6; background: #4d4d4d; cursor: default; -moz-box-shadow: none; -webkit-box-shadow: none; box-shadow: none; }
+body button::-moz-focus-inner { padding: 0 !important; margin: -1px !important; }
+body button:before { content: "\00AB"; padding-right: 0.25em; }
+body > header { position: absolute; left: 0; width: 100%; padding: 0.5rem; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; top: 0; }
+body > header img { max-width: 400px; max-height: 75px; }
 
 body > footer { color: black; background: rgba(255, 255, 255, 0.6) url('../../images/links/lincoln_small.png?1409891355') right center no-repeat; background-size: contain; bottom: 0; position: absolute; right: 0; -moz-border-radius-topleft: 2px; -webkit-border-top-left-radius: 2px; border-top-left-radius: 2px; border-color: rgba(0, 0, 0, 0.1); border-width: 3px 0 0 3px; border-style: solid; -moz-box-shadow: rgba(0, 0, 0, 0.8) 3px 3px 10px 3px; -webkit-box-shadow: rgba(0, 0, 0, 0.8) 3px 3px 10px 3px; box-shadow: rgba(0, 0, 0, 0.8) 3px 3px 10px 3px; padding: 0.5rem 1.5rem 0.5rem 0.5rem; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; font-size: 0.7rem; font-style: italic; text-align: right; }
 body > footer .logo { font-size: 120%; }

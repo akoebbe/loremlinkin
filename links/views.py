@@ -20,6 +20,7 @@ def index(request, link_hash=None):
                                      'description': link.description,
                                      'logo': link.logo,
                                      'color': link.color,
+                                     'texture': link.texture,
                                      })
         else:
             form = LinkForm()
@@ -30,9 +31,17 @@ def index(request, link_hash=None):
             description = form.cleaned_data['description']
             logo = form.cleaned_data['logo']
             color = form.cleaned_data['color']
+            texture = form.cleaned_data['texture']
 
-            link = Link(title=title, description=description, logo=logo, color=color)
-            link.save()
+            matches = Link.objects.all().filter(title=title, description=description, logo=logo, color=color, texture=texture)
+
+            if matches:
+                print "match! ", matches[0]
+                link = matches[0]
+            else:
+                link = Link(title=title, description=description, logo=logo, color=color, texture=texture)
+                link.save()
+
             return redirect(link)
 
 

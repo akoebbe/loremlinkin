@@ -1,14 +1,36 @@
-<!DOCTYPE html>
-<html>
-<head lang="en">
-    <meta charset="UTF-8">
-    <title></title>
-</head>
-<body>
-<form action='' method='post'>
-    {% csrf_token %}
-    {{ form.as_p }}
-<input type='submit' value='Submit' />
+{% extends "links/base.html" %}
+
+{% block title %}Lorem Linkin{% endblock %}
+
+{% block content %}
+<body class="home">
+        <form action='' method='post'>
+<header>
+            {{ form.logo.label_tag }}
+            {{ form.logo }}
+</header>
+<main>
+    <section>
+            {% csrf_token %}
+            {{ form.title.label_tag }}
+            {{ form.title }}
+            {{ form.description.label_tag }}
+            {{ form.description }}
+
+    </section>
+    <input type='submit' value='Submit' />
+{{ form.color.label_tag }}
+{{ form.color }}
+{{ form.texture.label_tag }}
+{{ form.texture }}
+</main>
+
 </form>
+<footer>
+    <ul id="footer-menu">
+        <li><a>About</a></li>
+        <li><a>Code</a></li>
+    </ul>
+</footer>
 </body>
-</html>
+{% endblock %}

@@ -1,38 +1,9 @@
-<!DOCTYPE html>{% load static %}
-<html ng-app="LoremLinkinApp">
-<head lang="en">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, user-scalable=no">
-    <title>{{ link.title }} - LoremLink.in</title>
-    <link rel="stylesheet" href="{% static "css/links/styles.css" %}" />
-    <link rel="stylesheet" href="{% static "css/links/xeditable.css" %}"  />
-    <script src="{% static "js/links/vendor/angularjs/angular.js" %}" type="text/javascript" charset="utf-8"></script>
-    <script src="{% static "js/links/vendor/angularjs/angular-animate.js" %}" type="text/javascript" charset="utf-8"></script>
-    <script src="{% static "js/links/vendor/angularjs/angular-cookies.js" %}" type="text/javascript" charset="utf-8"></script>
-    <script src="{% static "js/links/vendor/angularjs/angular-sanitize.js" %}" type="text/javascript" charset="utf-8"></script>
-    <script src="{% static "js/links/vendor/xeditable.min.js" %}" type="text/javascript" charset="utf-8"></script>
-    <script src="{% static "js/links/app/app.js" %}" type="text/javascript" charset="utf-8"></script>
-    <script src="{% static "js/links/app/services.js" %}" type="text/javascript" charset="utf-8"></script>
-    <script src="{% static "js/links/app/controllers.js" %}" type="text/javascript" charset="utf-8"></script>
-    <script src="//ajax.googleapis.com/ajax/libs/webfont/1.4.7/webfont.js"></script>
-    <script>
-      WebFont.load({
-        google: {
-          families: ['Roboto', 'Milonga']
-        }
-      });
-    </script>
-    <style>
-        body.link {
-            {% if link.color %}
-                background-color: {{link.color}};
-            {% endif %}
-            {% if link.texture %}
-                background-image: url({{link.texture.image.url}});
-            {% endif %}
-        }
-    </style>
-</head>
+{% extends "links/base.html" %}
+
+{% block title %}{{ link.title }} - LoremLink.in{% endblock %}
+
+
+{% block content %}
 <body class="link" ng-controller="LLCtrl">
     {% if link.logo %}
     <header>
@@ -56,4 +27,4 @@
         {% endblock %}
     </footer>
 </body>
-</html>
+{% endblock %}

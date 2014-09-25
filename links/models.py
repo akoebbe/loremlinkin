@@ -27,16 +27,16 @@ class Link(models.Model):
         else:
             return False
 
-
-class LinkForm(ModelForm):
-    class Meta:
-        model = Link
-        fields = ['title', 'description', 'logo', 'color']
-
-
 class Texture(models.Model):
     title = models.CharField(max_length=255, null=255)
     image = models.ImageField()
 
     def __str__(self):
         return self.title
+
+class LinkForm(ModelForm):
+    class Meta:
+        model = Link
+        fields = ['title', 'description', 'logo', 'color', 'texture']
+
+
